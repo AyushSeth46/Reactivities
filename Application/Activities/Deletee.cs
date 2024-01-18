@@ -7,6 +7,7 @@ namespace Application.Activities
 {
     public class Deletee
     {
+        //the sepration of handler and command is done to decouple the application
         public class Command : IRequest
         {
             public Guid Id { get; set; }
@@ -22,6 +23,8 @@ namespace Application.Activities
                 _context = context;
                 _mapper = mapper;
             }
+            //the use of cancellation token is to order the API to not go through the request
+            //when the process is cancelled from the user in middle of processing
             public async Task Handle(Command request, CancellationToken cancellationToken)
             {
                 var activity = await _context.Activities.FindAsync(request.Id);
