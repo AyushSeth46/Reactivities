@@ -36,7 +36,9 @@ function App() {
       <List>
         {activities.map((activity : any)=>( 
         <ListItemText key={activity.id}> 
-            {activity.title}
+            {activity.title} 
+            { " "}
+            {activity.venue}
         </ListItemText>
         )
          
