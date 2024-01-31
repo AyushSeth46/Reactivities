@@ -10,7 +10,7 @@ interface Props {
     //it could also be sepratly written as a diffrent function like function CloseForm() {returns void}
     //then closeForm : closeForm
 }
-export default function ActivityForms({activity :selectedActivity  , closeForm, createOrEdit, submitting}: Props){
+export default function ActivityForms({activity :selectedActivity, closeForm, createOrEdit, submitting}: Props){
     const initialState = selectedActivity ?? {
         id:'',
         title : '',

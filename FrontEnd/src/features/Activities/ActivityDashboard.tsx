@@ -15,7 +15,11 @@ interface Props {
   deleteActivity : (id: string) => void;
   submitting: boolean
 }
+//this interface will define the type of every property which will be passing down
 export default function ActivityDashboard({ activities, selectActivity, selectedActivity, cancelActivity, editMode, openForm,closeForm, handleCreateActivity, deleteActivity, submitting }: Props) {
+  //here we are destructuring Props
+  //while we can write props: Props, it will needed to add confusing codes like props.activities, props.selectActivites
+  //so we destricture the  interface and make all parameters directly availiable
   return (
     <Grid>
       <Grid.Column width="10">

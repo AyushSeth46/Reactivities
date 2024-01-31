@@ -2,6 +2,11 @@
 import axios, { AxiosResponse } from "axios";
 import { Activity } from "../models/activity";
 
+//this whole page is all to replace repetiotion like following code
+// axios.get('http://localhost:3000').then(response =>{
+//     console.log(response)
+//     setActivities(response.data)
+// }) 
 axios.defaults.baseURL = 'http://localhost:5000/api';
 
 const responseBody = <T>(response: AxiosResponse<T>) => response.data;
@@ -24,9 +29,14 @@ const Activities = {
     delete : (id: string) => axios.delete(`/activities/${id}`)
 }
 //this function will retrieve the list of activities from server
-
+/**work of agent is to retrive the list of activities from the server
+ * we could have used activities directly but The agent object is used to provide a layer of abstraction between the application and the HTTP requests. 
+ * This makes it easier to modify the HTTP requests in the future without having to change the rest of the application.
+ */
 const agent = {
+
     Activities
 }
 
 export default agent;
+

@@ -1,7 +1,7 @@
 export interface Activity {
     id : string
     title: string
-    date: string
+    date: string //we get date as a string from the backend not dateTime so string is used here instead of datetime
     description: string
     category: string
     city: string
