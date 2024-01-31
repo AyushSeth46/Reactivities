@@ -1,0 +1,7 @@
+This whole project follows an approach called clean architecture pattern
+We have seprated Application, Domain, Persistance and API logics from each  other so that they can work independently 
+This helps in debugging and decoupling of code, the errors arriving in the code can be resolved much easily by isolationg each one of them
+
+Another protocol we followed is  Command and Query Responsibility Segregation (CQRS) pattern which states that we must separate the operations 
+for reading the data from the operations for writing or updating the data. This means that functions for reading and writing data are not kept
+in the same interface or class. which is the reason why we build seprate classes in activities folder in which we have also seprated both command and query
